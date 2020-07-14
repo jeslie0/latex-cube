@@ -4,7 +4,7 @@
 
 This is my code snippet to produce the following diagram, using tikzcd: [[/cube.png]]
 
-All the vertices, edges and faces can be specified and only need to be specified once. Each vertex is written as a triple, \ijk means length i to the right, j up and k inwards. The front bottom left is the origin.
+All the vertices, edges and faces can be specified and only need to be specified once. Each vertex is written as a triple, \ijk means length i to the right, j up and k inwards. The front bottom left is the origin. There is also an example tex document showing how the labelling works.
 
 #+BEGIN_SRC latex
   \begin{center}
@@ -58,7 +58,7 @@ All the vertices, edges and faces can be specified and only need to be specified
       |[alias=DL]|{\OIO} \arrow[ru, "{\eh}"]            &               &               & {\OIO} \arrow[ru, "{\eh}"]            &                          & {\IIO} \arrow[ru, "{\fg}"'] \arrow[from=ll, crossing over, "{\ef}", near end]           &               & |[alias=CR]|{\IIO} \arrow[ru, "{\fg}"]            &               &               \\
       &|[alias=EL]| {\OOI} \arrow[uu, "{\Dh}"'] &               &                                     & {\OOI} \arrow[rr, "{\dc}", near start] &                          & {\IOI} \arrow[uu, "{\cg}"'] &                          & |[alias=GR]|{\IOI} \arrow[uu, "\cg"'] &               \\
       |[alias=AL]|{\OOO} \arrow[ru, "{\ad}"'] \arrow[uu, "{\Ae}"] \arrow[ruuu, phantom, "{\LEFT}"] &               &               & {\OOO} \arrow[rr, "{\ab}"'] \arrow[uu, "{\Ae}"] \arrow[ru, "{\ad}"] &                          & {\IOO} \arrow[uu, crossing over, "{\Bf}", near start] \arrow[ru, "{\bc}"'] &               & |[alias=BR]|{\IOO} \arrow[uu, "{\Bf}"] \arrow[ru, "{\bc}"'] \arrow[ruuu, phantom, "{\RIGHT}"] &               &               \\
-      |[alias=DF]|{\OIO} \arrow[rr, "{\dc}"]            &               & |[alias=CF]|{\IIO}            &                                     & |[alias=EB]|{\OOI} \arrow[rr, "{\dc}"]            &                          & |[alias=GB]|{\IOI}            &                          &               &               \\
+      |[alias=DF]|{\OIO} \arrow[rr, "{\ef}"]            &               & |[alias=CF]|{\IIO}            &                                     & |[alias=EB]|{\OOI} \arrow[rr, "{\dc}"]            &                          & |[alias=GB]|{\IOI}            &                          &               &               \\
       &               &               & |[alias=AB]|{\OOO} \arrow[ru, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rrru, phantom, "{\BOT}"]            &                          & |[alias=BB]|{\IOO} \arrow[ru, "{\bc}"']            &               &                          &               &               \\
       |[alias=AF]|{\OOO} \arrow[uu, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rruu, phantom, "{\FRONT}"]&               & |[alias=BF]|{\IOO} \arrow[uu, "{\Bf}"'] &                                     &                          &                          &               &                          &               &              
     \end{tikzcd}
