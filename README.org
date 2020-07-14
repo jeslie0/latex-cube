@@ -1,8 +1,8 @@
-#+title: Readme
+#+title: LaTeX Deconstructed Cube
 #+author: James Leslie
 #+STARTUP: inlineimages
 
-This is my code snippet to produce the following diagram: [[/cube.png]]
+This is my code snippet to produce the following diagram, using tikzcd: [[/cube.png]]
 
 All the vertices, edges and faces can be specified and only need to be specified once. Each vertex is written as a triple, \ijk means length i to the right, j up and k inwards. The front bottom left is the origin.
 
@@ -64,3 +64,6 @@ All the vertices, edges and faces can be specified and only need to be specified
     \end{tikzcd}
   \end{center}
 #+END_SRC
+
+
+Many thanks to Gonzalo Medina who gave a [[https://tex.stackexchange.com/questions/256835/tikz-cd-shade-faces-of-commutative-cube][lovely answer]] on how to fill sides of cubes in tikzcd.
