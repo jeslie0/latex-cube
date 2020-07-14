@@ -10,31 +10,89 @@
 \begin{center}
   \definecolor{greeo}{RGB}{91,173,69}
   \definecolor{pur}{RGB}{186,146,162}
-  \newcommand{\OOO}{a}
-  \newcommand{\IOO}{b}
-  \newcommand{\IIO}{c}
-  \newcommand{\OIO}{d}
-  \newcommand{\OOI}{e}
-  \newcommand{\OII}{f}
-  \newcommand{\IOI}{g}
-  \newcommand{\III}{h}
+  \newcommand{\OOO}{A}
+  \newcommand{\IOO}{B}
+  \newcommand{\IOI}{C}
+  \newcommand{\OOI}{D}
+  \newcommand{\OIO}{E}
+  \newcommand{\IIO}{F}
+  \newcommand{\III}{G}
+  \newcommand{\OII}{H}
   \newcommand{\ab}{f_1}
   \newcommand{\bc}{f_2}
-  \newcommand{\ad}{f_3}
-  \newcommand{\dc}{f_4}
-  \newcommand{\Ae}{f_5}
-  \newcommand{\eg}{f_6}
-  \newcommand{\bg}{f_7}
-  \newcommand{\gh}{f_8}
-  \newcommand{\ef}{f_9}
-  \newcommand{\fh}{g_1}
-  \newcommand{\df}{g_2}
-  \newcommand{\ch}{g_3}
+  \newcommand{\dc}{f_3}
+  \newcommand{\ad}{f_4}
+  \newcommand{\ef}{f_5}
+  \newcommand{\fg}{f_6}
+  \newcommand{\hg}{f_7}
+  \newcommand{\eh}{f_8}
+  \newcommand{\Ae}{g_1}
+  \newcommand{\Bf}{g_2}
+  \newcommand{\cg}{g_3}
+  \newcommand{\Dh}{g_4}
   \newcommand{\TOP}{\alpha}
   \newcommand{\BOT}{\beta}
   \newcommand{\LEFT}{\gamma}
-  \newcommand{\RIGHT}{\eta}
-  \newcommand{\FRONT}{\chi}
+  \newcommand{\RIGHT}{\delta}
+  \newcommand{\FRONT}{\epsilon}
+  \begin{tikzcd}[execute at end picture={
+      \foreach \Nombre in  {AF,BF,CF,DF,AL,DL,EL,FL,AB,BB,GB,EB,DT,CT,HT,FT,BR,GR,CR,HR,EBa,FBa,HBa,GBa}
+      {\coordinate (\Nombre) at (\Nombre.center);}
+      \fill[greeo,opacity=0.3] 
+      (AF) -- (BF) -- (CF) -- (DF) -- cycle;%Bottom
+      \fill[greeo,opacity=0.3] 
+      (AB) -- (BB) -- (GB) -- (EB) -- cycle;%bottom
+      \fill[greeo,opacity=0.3] 
+      (AL) -- (EL) -- (FL) -- (DL) -- cycle;%left
+      \fill[greeo,opacity=0.3] 
+      (BR) -- (GR) -- (HR) -- (CR) -- cycle;%right
+      \fill[greeo,opacity=0.3] 
+      (DT) -- (CT) -- (HT) -- (FT) -- cycle;%top
+      \fill[pur,opacity=0.3] 
+      (EBa) -- (FBa) -- (HBa) -- (GBa) -- cycle;%back
+    }]
+    &               &              &                                    &                          &                          &               & |[alias=FBa]|{\OII} \arrow[rr, "{\hg}"]            &               & |[alias=HBa]|{\III}            \\
+    &               &               &                                     & |[alias=FT]|{\OII} \arrow[rr, "{\hg}"]            &                          & |[alias=HT]|{\III}            &                          &               &               \\
+    &               &               & |[alias=DT]|{\OIO} \arrow[rr, "{\ef}"'] \arrow[ru, "{\eh}"] \arrow[rrru, phantom, "{\TOP}"]           &                          & |[alias=CT]|{\IIO} \arrow[ru, "{\fg}"']            &               & |[alias=EBa]|{\OOI} \arrow[rr, "{\dc}"'] \arrow[uu, "{\Dh}"] &               & |[alias=GBa]|{\IOI} \arrow[uu, "{\cg}"'] \\
+    &|[alias=FL]| {\OII}            &               &                                     & {\OII} \arrow[rr, "{\hg}"] \arrow[dd, <-, "{\Dh}"', near end]      &               & {\III}                       &                          & |[alias=HR]|{\III}            &               \\
+    |[alias=DL]|{\OIO} \arrow[ru, "{\eh}"]            &               &               & {\OIO} \arrow[ru, "{\eh}"]            &                          & {\IIO} \arrow[ru, "{\fg}"'] \arrow[from=ll, crossing over, "{\ef}", near end]           &               & |[alias=CR]|{\IIO} \arrow[ru, "{\fg}"]            &               &               \\
+    &|[alias=EL]| {\OOI} \arrow[uu, "{\Dh}"'] &               &                                     & {\OOI} \arrow[rr, "{\dc}", near start] &                          & {\IOI} \arrow[uu, "{\cg}"'] &                          & |[alias=GR]|{\IOI} \arrow[uu, "\cg"'] &               \\
+    |[alias=AL]|{\OOO} \arrow[ru, "{\ad}"'] \arrow[uu, "{\Ae}"] \arrow[ruuu, phantom, "{\LEFT}"] &               &               & {\OOO} \arrow[rr, "{\ab}"'] \arrow[uu, "{\Ae}"] \arrow[ru, "{\ad}"] &                          & {\IOO} \arrow[uu, crossing over, "{\Bf}", near start] \arrow[ru, "{\bc}"'] &               & |[alias=BR]|{\IOO} \arrow[uu, "{\Bf}"] \arrow[ru, "{\bc}"'] \arrow[ruuu, phantom, "{\RIGHT}"] &               &               \\
+    |[alias=DF]|{\OIO} \arrow[rr, "{\dc}"]            &               & |[alias=CF]|{\IIO}            &                                     & |[alias=EB]|{\OOI} \arrow[rr, "{\dc}"]            &                          & |[alias=GB]|{\IOI}            &                          &               &               \\
+    &               &               & |[alias=AB]|{\OOO} \arrow[ru, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rrru, phantom, "{\BOT}"]            &                          & |[alias=BB]|{\IOO} \arrow[ru, "{\bc}"']            &               &                          &               &               \\
+    |[alias=AF]|{\OOO} \arrow[uu, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rruu, phantom, "{\FRONT}"]&               & |[alias=BF]|{\IOO} \arrow[uu, "{\Bf}"'] &                                     &                          &                          &               &                          &               &              
+  \end{tikzcd}
+\end{center}
+
+
+\begin{center}
+  \definecolor{greeo}{RGB}{91,173,69}
+  \definecolor{pur}{RGB}{186,146,162}
+  \newcommand{\OOO}{}
+  \newcommand{\IOO}{}
+  \newcommand{\IIO}{}
+  \newcommand{\OIO}{}
+  \newcommand{\OOI}{}
+  \newcommand{\OII}{}
+  \newcommand{\IOI}{}
+  \newcommand{\III}{}
+  \newcommand{\ab}{}
+  \newcommand{\bc}{}
+  \newcommand{\ad}{}
+  \newcommand{\dc}{}
+  \newcommand{\Ae}{}
+  \newcommand{\eg}{}
+  \newcommand{\bg}{}
+  \newcommand{\gh}{}
+  \newcommand{\ef}{}
+  \newcommand{\fh}{}
+  \newcommand{\df}{}
+  \newcommand{\ch}{}
+  \newcommand{\TOP}{}
+  \newcommand{\BOT}{}
+  \newcommand{\LEFT}{}
+  \newcommand{\RIGHT}{}
+  \newcommand{\FRONT}{}
   \begin{tikzcd}[execute at end picture={
       \foreach \Nombre in  {AF,BF,CF,DF,AL,DL,EL,FL,AB,BB,GB,EB,DT,CT,HT,FT,BR,GR,CR,HR,EBa,FBa,HBa,GBa}
       {\coordinate (\Nombre) at (\Nombre.center);}
@@ -63,8 +121,5 @@
     |[alias=AF]|{\OOO} \arrow[uu, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rruu, phantom, "{\FRONT}"]&               & |[alias=BF]|{\IOO} \arrow[uu, "{\bc}"'] &                                     &                          &                          &               &                          &               &              
   \end{tikzcd}
 \end{center}
-
-
-
 
 \end{document}

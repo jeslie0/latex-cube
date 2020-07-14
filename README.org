@@ -12,24 +12,24 @@ All the vertices, edges and faces can be specified and only need to be specified
     \definecolor{pur}{RGB}{186,146,162}
     \newcommand{\OOO}{}
     \newcommand{\IOO}{}
-    \newcommand{\IIO}{}
-    \newcommand{\OIO}{}
-    \newcommand{\OOI}{}
-    \newcommand{\OII}{}
     \newcommand{\IOI}{}
+    \newcommand{\OOI}{}
+    \newcommand{\OIO}{}
+    \newcommand{\IIO}{}
     \newcommand{\III}{}
+    \newcommand{\OII}{}
     \newcommand{\ab}{}
     \newcommand{\bc}{}
-    \newcommand{\ad}{}
     \newcommand{\dc}{}
-    \newcommand{\Ae}{}
-    \newcommand{\eg}{}
-    \newcommand{\bg}{}
-    \newcommand{\gh}{}
+    \newcommand{\ad}{}
     \newcommand{\ef}{}
-    \newcommand{\fh}{}
-    \newcommand{\df}{}
-    \newcommand{\ch}{}
+    \newcommand{\fg}{}
+    \newcommand{\hg}{}
+    \newcommand{\eh}{}
+    \newcommand{\Ae}{}
+    \newcommand{\Bf}{}
+    \newcommand{\cg}{}
+    \newcommand{\Dh}{}
     \newcommand{\TOP}{}
     \newcommand{\BOT}{}
     \newcommand{\LEFT}{}
@@ -39,7 +39,7 @@ All the vertices, edges and faces can be specified and only need to be specified
         \foreach \Nombre in  {AF,BF,CF,DF,AL,DL,EL,FL,AB,BB,GB,EB,DT,CT,HT,FT,BR,GR,CR,HR,EBa,FBa,HBa,GBa}
         {\coordinate (\Nombre) at (\Nombre.center);}
         \fill[greeo,opacity=0.3] 
-        (AF) -- (BF) -- (CF) -- (DF) -- cycle;%front
+        (AF) -- (BF) -- (CF) -- (DF) -- cycle;%Bottom
         \fill[greeo,opacity=0.3] 
         (AB) -- (BB) -- (GB) -- (EB) -- cycle;%bottom
         \fill[greeo,opacity=0.3] 
@@ -51,19 +51,21 @@ All the vertices, edges and faces can be specified and only need to be specified
         \fill[pur,opacity=0.3] 
         (EBa) -- (FBa) -- (HBa) -- (GBa) -- cycle;%back
       }]
-      &               &              &                                    &                          &                          &               & |[alias=FBa]|{\OII} \arrow[rr, "{\fh}"]            &               & |[alias=HBa]|{\III}            \\
-      &               &               &                                     & |[alias=FT]|{\OII} \arrow[rr, "{\fh}"]            &                          & |[alias=HT]|{\III}            &                          &               &               \\
-      &               &               & |[alias=DT]|{\OIO} \arrow[rr, "{\dc}"'] \arrow[ru, "{\df}"] \arrow[rrru, phantom, "{\TOP}"]           &                          & |[alias=CT]|{\IIO} \arrow[ru, "{\ch}"']            &               & |[alias=EBa]|{\OOI} \arrow[rr, "{\eg}"'] \arrow[uu, "{\ef}"] &               & |[alias=GBa]|{\IOI} \arrow[uu, "{\gh}"'] \\
-      &|[alias=FL]| {\OII}            &               &                                     & {\OII} \arrow[rr, "{\fh}"] \arrow[dd, <-, "{\ef}"', near end]      &               & {\III}                       &                          & |[alias=HR]|{\III}            &               \\
-      |[alias=DL]|{\OIO} \arrow[ru, "{\df}"]            &               &               & {\OIO} \arrow[ru, "{\df}"]            &                          & {\IIO} \arrow[ru, "{\ch}"'] \arrow[from=ll, crossing over, "{\dc}", near end]           &               & |[alias=CR]|{\IIO} \arrow[ru, "{\ch}"]            &               &               \\
-      &|[alias=EL]| {\OOI} \arrow[uu, "{\ef}"'] &               &                                     & {\OOI} \arrow[rr, "{\eg}", near start] &                          & {\IOI} \arrow[uu, "{\gh}"'] &                          & |[alias=GR]|{\IOI} \arrow[uu, "\gh"'] &               \\
-      |[alias=AL]|{\OOO} \arrow[ru, "{\Ae}"'] \arrow[uu, "{\ad}"] \arrow[ruuu, phantom, "{\LEFT}"] &               &               & {\OOO} \arrow[rr, "{\ab}"'] \arrow[uu, "{\ad}"] \arrow[ru, "{\Ae}"] &                          & {\IOO} \arrow[uu, crossing over, "{\bc}", near start] \arrow[ru, "{\bg}"'] &               & |[alias=BR]|{\IOO} \arrow[uu, "{\bc}"] \arrow[ru, "{\bg}"'] \arrow[ruuu, phantom, "{\RIGHT}"] &               &               \\
-      |[alias=DF]|{\OIO} \arrow[rr, "{\dc}"]            &               & |[alias=CF]|{\IIO}            &                                     & |[alias=EB]|{\OOI} \arrow[rr, "{\eg}"]            &                          & |[alias=GB]|{\IOI}            &                          &               &               \\
-      &               &               & |[alias=AB]|{\OOO} \arrow[ru, "{\Ae}"] \arrow[rr, "{\ab}"'] \arrow[rrru, phantom, "{\BOT}"]            &                          & |[alias=BB]|{\IOO} \arrow[ru, "{\bg}"']            &               &                          &               &               \\
-      |[alias=AF]|{\OOO} \arrow[uu, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rruu, phantom, "{\FRONT}"]&               & |[alias=BF]|{\IOO} \arrow[uu, "{\bc}"'] &                                     &                          &                          &               &                          &               &              
+      &               &              &                                    &                          &                          &               & |[alias=FBa]|{\OII} \arrow[rr, "{\hg}"]            &               & |[alias=HBa]|{\III}            \\
+      &               &               &                                     & |[alias=FT]|{\OII} \arrow[rr, "{\hg}"]            &                          & |[alias=HT]|{\III}            &                          &               &               \\
+      &               &               & |[alias=DT]|{\OIO} \arrow[rr, "{\ef}"'] \arrow[ru, "{\eh}"] \arrow[rrru, phantom, "{\TOP}"]           &                          & |[alias=CT]|{\IIO} \arrow[ru, "{\fg}"']            &               & |[alias=EBa]|{\OOI} \arrow[rr, "{\dc}"'] \arrow[uu, "{\Dh}"] &               & |[alias=GBa]|{\IOI} \arrow[uu, "{\cg}"'] \\
+      &|[alias=FL]| {\OII}            &               &                                     & {\OII} \arrow[rr, "{\hg}"] \arrow[dd, <-, "{\Dh}"', near end]      &               & {\III}                       &                          & |[alias=HR]|{\III}            &               \\
+      |[alias=DL]|{\OIO} \arrow[ru, "{\eh}"]            &               &               & {\OIO} \arrow[ru, "{\eh}"]            &                          & {\IIO} \arrow[ru, "{\fg}"'] \arrow[from=ll, crossing over, "{\ef}", near end]           &               & |[alias=CR]|{\IIO} \arrow[ru, "{\fg}"]            &               &               \\
+      &|[alias=EL]| {\OOI} \arrow[uu, "{\Dh}"'] &               &                                     & {\OOI} \arrow[rr, "{\dc}", near start] &                          & {\IOI} \arrow[uu, "{\cg}"'] &                          & |[alias=GR]|{\IOI} \arrow[uu, "\cg"'] &               \\
+      |[alias=AL]|{\OOO} \arrow[ru, "{\ad}"'] \arrow[uu, "{\Ae}"] \arrow[ruuu, phantom, "{\LEFT}"] &               &               & {\OOO} \arrow[rr, "{\ab}"'] \arrow[uu, "{\Ae}"] \arrow[ru, "{\ad}"] &                          & {\IOO} \arrow[uu, crossing over, "{\Bf}", near start] \arrow[ru, "{\bc}"'] &               & |[alias=BR]|{\IOO} \arrow[uu, "{\Bf}"] \arrow[ru, "{\bc}"'] \arrow[ruuu, phantom, "{\RIGHT}"] &               &               \\
+      |[alias=DF]|{\OIO} \arrow[rr, "{\dc}"]            &               & |[alias=CF]|{\IIO}            &                                     & |[alias=EB]|{\OOI} \arrow[rr, "{\dc}"]            &                          & |[alias=GB]|{\IOI}            &                          &               &               \\
+      &               &               & |[alias=AB]|{\OOO} \arrow[ru, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rrru, phantom, "{\BOT}"]            &                          & |[alias=BB]|{\IOO} \arrow[ru, "{\bc}"']            &               &                          &               &               \\
+      |[alias=AF]|{\OOO} \arrow[uu, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rruu, phantom, "{\FRONT}"]&               & |[alias=BF]|{\IOO} \arrow[uu, "{\Bf}"'] &                                     &                          &                          &               &                          &               &              
     \end{tikzcd}
   \end{center}
+
 #+END_SRC
 
-
 Many thanks to Gonzalo Medina who gave a [[https://tex.stackexchange.com/questions/256835/tikz-cd-shade-faces-of-commutative-cube][lovely answer]] on how to fill sides of cubes in tikzcd.
+* TODO
+** Fix labels of vertices in code.
