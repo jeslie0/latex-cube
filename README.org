@@ -1,0 +1,66 @@
+#+title: Readme
+#+author: James Leslie
+#+STARTUP: inlineimages
+
+This is my code snippet to produce the following diagram: [[/cube.png]]
+
+All the vertices, edges and faces can be specified and only need to be specified once. Each vertex is written as a triple, \ijk means length i to the right, j up and k inwards. The front bottom left is the origin.
+
+#+BEGIN_SRC latex
+  \begin{center}
+    \definecolor{greeo}{RGB}{91,173,69}
+    \definecolor{pur}{RGB}{186,146,162}
+    \newcommand{\OOO}{}
+    \newcommand{\IOO}{}
+    \newcommand{\IIO}{}
+    \newcommand{\OIO}{}
+    \newcommand{\OOI}{}
+    \newcommand{\OII}{}
+    \newcommand{\IOI}{}
+    \newcommand{\III}{}
+    \newcommand{\ab}{}
+    \newcommand{\bc}{}
+    \newcommand{\ad}{}
+    \newcommand{\dc}{}
+    \newcommand{\Ae}{}
+    \newcommand{\eg}{}
+    \newcommand{\bg}{}
+    \newcommand{\gh}{}
+    \newcommand{\ef}{}
+    \newcommand{\fh}{}
+    \newcommand{\df}{}
+    \newcommand{\ch}{}
+    \newcommand{\TOP}{}
+    \newcommand{\BOT}{}
+    \newcommand{\LEFT}{}
+    \newcommand{\RIGHT}{}
+    \newcommand{\FRONT}{}
+    \begin{tikzcd}[execute at end picture={
+        \foreach \Nombre in  {AF,BF,CF,DF,AL,DL,EL,FL,AB,BB,GB,EB,DT,CT,HT,FT,BR,GR,CR,HR,EBa,FBa,HBa,GBa}
+        {\coordinate (\Nombre) at (\Nombre.center);}
+        \fill[greeo,opacity=0.3] 
+        (AF) -- (BF) -- (CF) -- (DF) -- cycle;%front
+        \fill[greeo,opacity=0.3] 
+        (AB) -- (BB) -- (GB) -- (EB) -- cycle;%bottom
+        \fill[greeo,opacity=0.3] 
+        (AL) -- (EL) -- (FL) -- (DL) -- cycle;%left
+        \fill[greeo,opacity=0.3] 
+        (BR) -- (GR) -- (HR) -- (CR) -- cycle;%right
+        \fill[greeo,opacity=0.3] 
+        (DT) -- (CT) -- (HT) -- (FT) -- cycle;%top
+        \fill[pur,opacity=0.3] 
+        (EBa) -- (FBa) -- (HBa) -- (GBa) -- cycle;%back
+      }]
+      &               &              &                                    &                          &                          &               & |[alias=FBa]|{\OII} \arrow[rr, "{\fh}"]            &               & |[alias=HBa]|{\III}            \\
+      &               &               &                                     & |[alias=FT]|{\OII} \arrow[rr, "{\fh}"]            &                          & |[alias=HT]|{\III}            &                          &               &               \\
+      &               &               & |[alias=DT]|{\OIO} \arrow[rr, "{\dc}"'] \arrow[ru, "{\df}"] \arrow[rrru, phantom, "{\TOP}"]           &                          & |[alias=CT]|{\IIO} \arrow[ru, "{\ch}"']            &               & |[alias=EBa]|{\OOI} \arrow[rr, "{\eg}"'] \arrow[uu, "{\ef}"] &               & |[alias=GBa]|{\IOI} \arrow[uu, "{\gh}"'] \\
+      &|[alias=FL]| {\OII}            &               &                                     & {\OII} \arrow[rr, "{\fh}"] \arrow[dd, <-, "{\ef}"', near end]      &               & {\III}                       &                          & |[alias=HR]|{\III}            &               \\
+      |[alias=DL]|{\OIO} \arrow[ru, "{\df}"]            &               &               & {\OIO} \arrow[ru, "{\df}"]            &                          & {\IIO} \arrow[ru, "{\ch}"'] \arrow[from=ll, crossing over, "{\dc}", near end]           &               & |[alias=CR]|{\IIO} \arrow[ru, "{\ch}"]            &               &               \\
+      &|[alias=EL]| {\OOI} \arrow[uu, "{\ef}"'] &               &                                     & {\OOI} \arrow[rr, "{\eg}", near start] &                          & {\IOI} \arrow[uu, "{\gh}"'] &                          & |[alias=GR]|{\IOI} \arrow[uu, "\gh"'] &               \\
+      |[alias=AL]|{\OOO} \arrow[ru, "{\Ae}"'] \arrow[uu, "{\ad}"] \arrow[ruuu, phantom, "{\LEFT}"] &               &               & {\OOO} \arrow[rr, "{\ab}"'] \arrow[uu, "{\ad}"] \arrow[ru, "{\Ae}"] &                          & {\IOO} \arrow[uu, crossing over, "{\bc}", near start] \arrow[ru, "{\bg}"'] &               & |[alias=BR]|{\IOO} \arrow[uu, "{\bc}"] \arrow[ru, "{\bg}"'] \arrow[ruuu, phantom, "{\RIGHT}"] &               &               \\
+      |[alias=DF]|{\OIO} \arrow[rr, "{\dc}"]            &               & |[alias=CF]|{\IIO}            &                                     & |[alias=EB]|{\OOI} \arrow[rr, "{\eg}"]            &                          & |[alias=GB]|{\IOI}            &                          &               &               \\
+      &               &               & |[alias=AB]|{\OOO} \arrow[ru, "{\Ae}"] \arrow[rr, "{\ab}"'] \arrow[rrru, phantom, "{\BOT}"]            &                          & |[alias=BB]|{\IOO} \arrow[ru, "{\bg}"']            &               &                          &               &               \\
+      |[alias=AF]|{\OOO} \arrow[uu, "{\ad}"] \arrow[rr, "{\ab}"'] \arrow[rruu, phantom, "{\FRONT}"]&               & |[alias=BF]|{\IOO} \arrow[uu, "{\bc}"'] &                                     &                          &                          &               &                          &               &              
+    \end{tikzcd}
+  \end{center}
+#+END_SRC
